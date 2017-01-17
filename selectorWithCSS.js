@@ -6,7 +6,7 @@ $.init = function(expr, context) {
 };
 $.init.prototype = {
 	each: function(el) {
-		for (var l = this.length; l--;) el(this[l]);
+		for (var l=0;l<this.length;l++) el(this[l]);
 	},
 	css: function(prop, val) {
 		if ("object" == typeof prop) this.each(function(val) {
