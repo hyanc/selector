@@ -1,8 +1,13 @@
 var $ = function(expr, context) {
 	return new $.init(expr, context);
 };
-$.init = function(expr, context) {
-	expr.nodeName && !context ? this[0] = expr : [].push.apply(this, [].slice.call((context || document).querySelectorAll(expr)));
+$.init = function(expr,context) {
+	if(expr.nodeName && !context) this[0] = expr;
+	else {
+		try { var el = (context||document)['querySelectorAll'](expr); }
+		catch(err){ var el = expr; }
+		[].push.apply(this,[].slice.call(el));
+	}
 };
 $.init.prototype = {
 	each: function(el) {
