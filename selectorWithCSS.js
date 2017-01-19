@@ -14,7 +14,7 @@ $.init.prototype = {
 		for (var l=0;l<this.length;l++) el(this[l]);
 	},
 	css: function(prop, val) {
-		if ("object" == typeof prop) this.each(function(val) {
+		if ('object' == typeof prop) this.each(function(val) {
 			for(var i in prop) val.style[i] = prop[i];
 		});
 		else {
