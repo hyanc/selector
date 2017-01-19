@@ -17,7 +17,10 @@ $('#search').css('color','red');
 //set red color to selector
 
 $('#z > input').css('color');
-//return computed/current style from css
+//retrieve computed/current style from css
+
+$(document.getElementById('search')).css('color');
+//retrieve style from native DOM expression
 
 $('#z > i').css('font-weight','bolder');
 //set all i element in id z to bolder font
