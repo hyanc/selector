@@ -18,11 +18,16 @@ $.init.prototype = {
 			for(var i in prop) val.style[i] = prop[i];
 		});
 		else {
-			prop = prop.replace(/-([a-z])/g, function(prop) { return prop[1].toUpperCase(); });
-			var el = this[0];
-			return 1 < arguments.length ? (1 < this.length ? this.each(function(el) {
-				el.style[prop] = val;
-			}) : el.style[prop] = val, "") : "" === el.style[prop] ? el.currentStyle ? el.currentStyle[prop] : document.defaultView.getComputedStyle(el, null).getPropertyValue(prop) : el.style[prop];
+			prop = prop.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+			var el = this[0], lt = /(left||top)/.test(prop);
+			if(arguments.length>1) return 1 < this.length ? this.each(function(o){o.style[prop] = val;}) : el.style[prop] = val,"";
+			else return el.style[prop]==''?(
+				el.currentStyle && !lt?
+				el.currentStyle[prop]:(lt?
+					Math.round(el.getBoundingClientRect()[prop]):
+					document.defaultView.getComputedStyle(el, null).getPropertyValue(prop)
+				)
+			):el.style[prop];
 		}
 	},
 	on: function(evt, fn) {
