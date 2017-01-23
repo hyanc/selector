@@ -1,6 +1,6 @@
 # selectorWithCSS
 Lightweight JavaScript DOM selector with prototyped CSS method and event handler
-- 823 bytes in minified version.
+- 916 bytes in minified version.
 - Selector with CSS, context & native DOM support.
 - Event handler.
 - CSS manipulation, with current style & object literal support.
