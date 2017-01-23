@@ -19,6 +19,9 @@ $('#search').css('color','red');
 $('#z > input').css('color');
 //retrieve computed/current style from css
 
+$('#z > input').css('top');
+//retrieve current offset
+
 $(document.getElementById('search')).css('color');
 //retrieve style from native DOM expression
 
