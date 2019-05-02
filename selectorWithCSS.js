@@ -37,5 +37,26 @@ $.init.prototype = {
 				return fn.call(el, window.event);
 			});
 		}
+	},
+	append: function(param) {
+		var el = document.createElement(param.element||'div'), ar = [];
+		param.hasOwnProperty('element') && delete param.element;
+		this[0].appendChild(el);
+		for(var i in param) el.setAttribute(i,param[i]);
+	},
+    	remove: function() {
+    		this[0].parentNode.removeChild(this[0]);
+    	},
+	attr: function(key,val) {
+		var el = this[0];
+		return val ? (el.setAttribute(key, val), '') : el.getAttribute(key);
+	},
+    	val: function(dat){
+	    var el = this[0];
+	    return arguments.length ? (el.value = dat, '') : el.value;
+	},
+	text: function(dat){
+	    var el = this[0];
+	    return arguments.length ? (el.innerHTML = dat, '') : el.innerHTML;
 	}
 };
