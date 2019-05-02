@@ -52,4 +52,12 @@ $('#z').on('click',function(){
 	$(['i','input'],this).css('color','blue');
 	//set multiple elements from context
 });
+
+//added element and attribute
+$('#z').append({
+	'element':'input',
+	'type':'checkbox',
+	'id':'box',
+	'checked':true
+});
 ```
