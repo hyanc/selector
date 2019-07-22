@@ -1,5 +1,5 @@
-# selectorWithCSS
-Lightweight JavaScript DOM selector with prototyped CSS method and event handler
+# selector
+Light weight JavaScript DOM selector with prototyped CSS method and event handler
 - 916 bytes in minified version (v1.0).
 - Selector with CSS, context & native DOM support.
 - Event handler.
