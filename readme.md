@@ -1,4 +1,4 @@
-# selector
+# Selector
 Light weight JavaScript DOM selector with prototyped CSS method and event handler
 - 916 bytes in minified version (v1.0).
 - Selector with CSS, context & native DOM support.
@@ -61,4 +61,15 @@ $('#z').append({
 	'id':'box',
 	'checked':true
 });
+```
+
+```javascript
+//setup ajax call
+$.ajax(
+	'response', //script's id for further action
+	'http://example.com/services.php',
+	function(){
+		//code after services.php is successfully called
+	}
+);
 ```
