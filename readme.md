@@ -67,7 +67,7 @@ $('#z').append({
 //setup ajax call
 $.ajax(
 	'response', //script's id for further action
-	'http://example.com/services.php',
+	'http://example.com/services.php', //javascript content
 	function(){
 		//code after services.php is successfully called
 	}
