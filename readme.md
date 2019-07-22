@@ -54,6 +54,7 @@ $('#z').on('click',function(){
 });
 
 //added element and attributes
+//predefined params: element as new element name, text as innerHTML
 $('#z').append({
 	'element':'input',
 	'type':'checkbox',
