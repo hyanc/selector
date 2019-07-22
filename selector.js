@@ -1,6 +1,16 @@
 var $ = function(expr, context) {
 	return new $.init(expr, context);
 };
+$.ajax = function(id,url,fn) {
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.async = true;
+	script.src = url;
+	script.setAttribute('id',id);
+	var newElement = document.getElementsByTagName('script')[0];
+	newElement.parentNode.insertBefore(script,newElement);
+	$('#'+id).on('load',fn);
+};
 $.init = function(expr,context) {
 	if(expr.nodeName && !context) this[0] = expr;
 	else {
