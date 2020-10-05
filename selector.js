@@ -48,12 +48,13 @@ $.init.prototype = {
 			});
 		}
 	},
-	append: function(param) {
+	append: function(param,text='') {
 		var el = document.createElement(param.element||'div');
 		param.hasOwnProperty('element') && delete param.element;
 		el.innerHTML = param.hasOwnProperty('text')?param.text:null;
 		this[0].appendChild(el);
 		for(var i in param) el.setAttribute(i,param[i]);
+		if(text!='') el.innerHTML = text;
 	},
     	remove: function() {
     		this[0].parentNode.removeChild(this[0]);
