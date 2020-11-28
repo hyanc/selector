@@ -51,7 +51,7 @@ $.init.prototype = {
 	append: function(param) {
 		var el = document.createElement(param.element||'div');
 		param.hasOwnProperty('element') && delete param.element;
-		el.innerHTML = param.hasOwnProperty('text')?param.text:null;
+		el.innerHTML = param.hasOwnProperty('text')?param.text:'';
 		this[0].appendChild(el);
 		for(var i in param) el.setAttribute(i,param[i]);
 	},
