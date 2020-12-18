@@ -63,11 +63,14 @@ $.init.prototype = {
 		return val ? (el.setAttribute(key, val), '') : el.getAttribute(key);
 	},
     	val: function(dat){
-	    var el = this[0];
-	    return arguments.length ? (el.value = dat, '') : el.value;
+		var el = this[0];
+		return arguments.length ? (el.value = dat, '') : el.value;
 	},
 	text: function(dat){
-	    var el = this[0];
-	    return arguments.length ? (el.innerHTML = dat, '') : el.innerHTML;
+		var el = this[0];
+		return arguments.length ? (el.innerHTML = dat, '') : el.innerHTML;
+	},
+	toggle: function(key,val1,val2){
+		this.css(key,this.css(key)==val1?val2:val1);
 	}
 };
