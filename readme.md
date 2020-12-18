@@ -53,6 +53,11 @@ $('#z').on('click',function(){
 	//set multiple elements from context
 });
 
+//toggle between two value
+$('#search').on('click',function(){
+    $(this).toggle('background-color','silver','yellow');
+});
+
 //added element and attributes
 //predefined params: element as new element name, text as innerHTML
 $('#z').append({
