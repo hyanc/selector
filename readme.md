@@ -59,12 +59,15 @@ $('#search').on('click',function(){
 });
 
 //added element and attributes
-//predefined params: element as new element name, text as innerHTML
+//predefined params: 'element' as new element name, 'text' as innerHTML, 'css' with object parameters
 $('#z').append({
 	'element':'input',
 	'type':'checkbox',
 	'id':'box',
-	'checked':true
+	'checked':true,
+	'css': {
+		'cursor' : 'pointer'
+	}
 });
 ```
 
