@@ -51,8 +51,12 @@ $.init.prototype = {
 	append: function(param) {
 		var el = document.createElement(param.element||'div');
 		param.hasOwnProperty('element') && delete param.element;
-		if(param.hasOwnProperty('text')) el.innerHTML = param.text; delete param.text;
+		param.hasOwnProperty('text') && (el.innerHTML = param.text) && delete param.text;
 		this[0].appendChild(el);
+		if(param.hasOwnProperty('css') && ('object' == typeof param.css)){
+			for(var i in param.css)	el.style[i] = param.css[i];
+			delete param.css;
+		}
 		for(var i in param) el.setAttribute(i,param[i]);
 	},
     	remove: function() {
