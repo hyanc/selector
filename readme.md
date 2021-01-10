@@ -1,3 +1,19 @@
+# Specifications
+
+I always wanted jQuery-like framework in minimal, but with only some essential functions.<br />
+The original code (Release 1.0) was less than 1 KB (min ver).<br />
+The latest code is 1.6 KB (min ver) contain patch and essential functions, they are:
+- ***css***, support object literal
+- ***each***, loop
+- ***on***, event handler
+- ***append*** node, css param support
+- ***remove*** node
+- ***attr***ibute, add and remove
+- ***val***, read and write value
+- ***text***, read and write innerHTML
+- ***toggle***, handy function for quick switch between two css rule
+
+---
 # HTML Sample
 ```html
 <div id="z">
