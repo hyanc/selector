@@ -1,45 +1,62 @@
-# Selector
-Light weight JavaScript DOM selector with prototyped CSS method and event handler
-- 916 bytes in minified version (v1.0).
-- Selector with CSS, context & native DOM support.
-- Event handler.
-- CSS manipulation, with current style & object literal support.
-
+# HTML Sample
 ```html
-<div id="z" class="a">
+<div id="z">
 	<i>ghi</i>
 	<input id="search" value="xyz" />
 	<i>mno</i>
 </div>
 ```
+---
+
+# CSS
 ```javascript
-$('#search').css('color','red');
 //set red color to selector
+$('#search').css('color','red');
 
+//read computed/current style from css
 $('#z > input').css('color');
-//retrieve computed/current style from css
 
+//read current offset
 $('#z > input').css('top');
-//retrieve current offset
 
+//read style from native DOM expression
 $(document.getElementById('search')).css('color');
-//retrieve style from native DOM expression
 
-$('#z > i').css('font-weight','bolder');
 //set all i element in id z to bolder font
+$('#z > i').css('font-weight','bolder');
 
+//set input's style with object-literal
 $('#z > input').css({
 	'background-color':'red',
 	'font-style':'italic',
 	'color':'white'
 });
-//set input's style with object-literal
+```
+---
+# HTML Attribute
+```javascript
+//add attribute
+$('#z').attr('class','content')
 
+//read attribute
+$('#z').attr('class')
+
+//remove attribute
+$('#z').attr('class','')
+```
+---
+
+# Loop
+```javascript
+//set all i element in id z to red color with native style
 $('#z > i').each(function(o){
 	o.style.color = 'red';
 });
-//set all i element in id z to red color with native style
+```
+---
 
+# Event Handler
+```javascript
 $('i').on('click',function(){
     $(this).css('background-color','yellow');
 });
@@ -57,9 +74,17 @@ $('#z').on('click',function(){
 $('#search').on('click',function(){
     $(this).toggle('background-color','silver','yellow');
 });
+```
+---
 
-//added element and attributes
-//predefined params: 'element' as new element name, 'text' as innerHTML, 'css' with object parameters
+# Append
+Predefined params
+- **element**, new element name.
+- **text**, innerHTML.
+- **css**, style with object parameters support.
+
+```javascript
+//add element and attributes
 $('#z').append({
 	'element':'input',
 	'type':'checkbox',
@@ -70,7 +95,10 @@ $('#z').append({
 	}
 });
 ```
+---
 
+# Ajax
+Demonstrate append with additional event handler
 ```javascript
 //setup ajax call
 $('#z').append({
