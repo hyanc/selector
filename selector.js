@@ -1,16 +1,6 @@
 var $ = function(expr, context) {
 	return new $.init(expr, context);
 };
-$.ajax = function(id,url,fn) {
-	var script = document.createElement('script');
-	script.type = 'text/javascript';
-	script.async = true;
-	script.src = url;
-	script.setAttribute('id',id);
-	var newElement = document.getElementsByTagName('script')[0];
-	newElement.parentNode.insertBefore(script,newElement);
-	$('#'+id).on('load',fn);
-};
 $.init = function(expr,context) {
 	if(expr.nodeName && !context) this[0] = expr;
 	else {
@@ -62,17 +52,19 @@ $.init.prototype = {
     	remove: function() {
     		this[0] !== undefined && this[0].parentNode.removeChild(this[0]);
     	},
-	attr: function(key,val) {
+	attr: function(key,val){
 		var el = this[0];
-		return val ? (el.setAttribute(key, val), '') : el.getAttribute(key);
+		return val!==undefined?(
+			val?el.setAttribute(key,val):el.removeAttribute(key)
+		): el.getAttribute(key);
 	},
     	val: function(dat){
 		var el = this[0];
-		return arguments.length ? (el.value = dat, '') : el.value;
+		return arguments.length ? (el.value = dat) : el.value;
 	},
 	text: function(dat){
 		var el = this[0];
-		return arguments.length ? (el.innerHTML = dat, '') : el.innerHTML;
+		return arguments.length ? (el.innerHTML = dat) : el.innerHTML;
 	},
 	toggle: function(key,val1,val2){
 		this.css(key,this.css(key)==val1?val2:val1);
