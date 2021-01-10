@@ -49,16 +49,16 @@ $.init.prototype = {
 		}
 		for(var i in param) el.setAttribute(i,param[i]);
 	},
-    	remove: function() {
+	remove: function() {
     		this[0] !== undefined && this[0].parentNode.removeChild(this[0]);
-    	},
+	},
 	attr: function(key,val){
 		var el = this[0];
 		return val!==undefined?(
 			val?el.setAttribute(key,val):el.removeAttribute(key)
 		): el.getAttribute(key);
 	},
-    	val: function(dat){
+	val: function(dat){
 		var el = this[0];
 		return arguments.length ? (el.value = dat) : el.value;
 	},
