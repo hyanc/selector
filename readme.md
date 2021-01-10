@@ -73,11 +73,14 @@ $('#z').append({
 
 ```javascript
 //setup ajax call
-$.ajax(
-	'response', //script's id for further action
-	'http://example.com/services.php', //javascript content
-	function(){
+$('#z').append({
+	'element':'script',
+	'type':'text/javascript',
+	'async':true,
+	'src':'http://example.com/services.php',
+	'id':'response',
+	'onload':(function(){
 		//code after services.php is successfully called
-	}
-);
+	})()
+});
 ```
