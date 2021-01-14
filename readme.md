@@ -1,6 +1,6 @@
 # Specifications
 
-I always wanted jQuery-like framework in minimal, but with only some essential functions.<br />
+I always wanted jQuery-like library in minimal, but with only some essential functions.<br />
 The original code (Release 1.0) was less than 1 KB (min ver).<br />
 The latest code is 1.6 KB (min ver) contain patch and essential functions, they are:
 - ***css***, support object literal
