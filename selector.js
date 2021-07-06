@@ -50,7 +50,9 @@ $.init.prototype = {
 		for(var i in param) el.setAttribute(i,param[i]);
 	},
 	remove: function() {
-    		this[0] !== undefined && this[0].parentNode.removeChild(this[0]);
+		for(i in this){
+			typeof this[i] === 'object' && this[i].parentNode.removeChild(this[i]);
+		}
 	},
 	attr: function(key,val){
 		var el = this[0];
