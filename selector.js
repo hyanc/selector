@@ -54,11 +54,9 @@ $.init.prototype = {
 			typeof this[i] === 'object' && this[i].parentNode.removeChild(this[i]);
 		}
 	},
-	attr: function(key,val){
-		var el = this[0];
-		return val!==undefined?(
-			val?el.setAttribute(key,val):el.removeAttribute(key)
-		): el.getAttribute(key);
+	attr:function(key,val){
+		if(void 0===val)return this[0].getAttribute(key);
+		for(i in this)el=this[i],"object"===typeof el&&("disabled"==key?el.disabled=val:val?el.setAttribute(key,val):el.removeAttribute(key))
 	},
 	val: function(dat){
 		var el = this[0];
