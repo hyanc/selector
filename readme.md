@@ -108,7 +108,8 @@ $('#z').append({
 	'checked':true,
 	'css': {
 		'cursor' : 'pointer'
-	}
+	},
+	'onclick': 'alert(this.checked)'
 });
 ```
 ---
